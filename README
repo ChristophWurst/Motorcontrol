@@ -1,0 +1,5 @@
+Motorcontrol linux device driver by Christoph Wurst
+
+This Linux device driver creates PWM signals on parallel port. To measure motor speed interrupts on the ACK-pin are used.
+
+There is a conflict with "parport_pc" driver. To use Motorcontrol parport_pc needs to be on the module blacklist so it isnt loaded on startup. Otherwise parport_pc disables the parallel port at release, so you cannot use it again with this driver.
